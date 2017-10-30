@@ -73,10 +73,6 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Screen
 ###############################################################################
 
-# Require password immediately after sleep or screen saver.
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 # Save screenshots to desktop and disable the horrific drop-shadow.
 defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 defaults write com.apple.screencapture type -string "png"
