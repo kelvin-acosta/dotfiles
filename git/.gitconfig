@@ -1,0 +1,38 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Kelvin Acosta
+  email = kelvinacostac@gmail.com
+[core]
+  excludesfile = ~/.gitignore_global
+  pager = diff-so-fancy | less --tabs=4 -RFX
+[push]
+  default = simple
+[pull]
+  rebase = false
+[diff]
+  indentHeuristic = on
+[github]
+  user = kelvin-acosta
+[format]
+  pretty = %C(auto)%h - %s%d%n%+b%+N(%G?) %an <%ae> (%C(blue)%ad%C(auto))%n
+# Colors
+[color]
+  ui = true
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHightlight = green bold 22
+[color "diff"]
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[init]
+  defaultBranch = main
+[credential "https://github.com"]
+  helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = !gh auth git-credential
