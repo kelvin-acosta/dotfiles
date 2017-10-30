@@ -49,3 +49,5 @@ ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+source .macos
