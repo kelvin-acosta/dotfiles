@@ -1,11 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=~/.composer/vendor/bin:$PATH
+export PATH=$HOME/.rbenv/shims:$PATH
+export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/bin/erl:/usr/local/bin/elixir:$PATH
 export PATH=$(go env GOPATH)/bin:$PATH
 export GOPATH="$HOME/go"
 export NVM_DIR="$HOME/.nvm"
-export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -223,3 +224,4 @@ alias ipInfo0='ipconfig getpacket en0'              # ipInfo0:      Get info on 
 alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
 alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
 alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
+
