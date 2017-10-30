@@ -66,7 +66,6 @@ brew 'zplug'
 # Apps
 cask 'docker'
 cask 'firefox'
-cask 'google-drive'
 cask 'google-chrome'
 cask 'google-chrome-canary'
 cask 'visual-studio-code'
