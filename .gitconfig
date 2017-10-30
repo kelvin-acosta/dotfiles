@@ -1,0 +1,32 @@
+# This is Git's per-user configuration file.
+[user]
+        name = Kelvin Acosta
+        email = kacosta@fuzzproductions.com
+[core]
+        excludesfile = /Users/kacosta/.gitignore_global
+        pager = diff-so-fancy | less --tabs=4 -RFX
+[credential]
+        helper = osxkeychain
+[push]
+        default = simple
+[diff]
+        indentHeuristic = on
+
+# Colors
+[color]
+        ui = true
+[color "diff-highlight"]
+        oldNormal = red bold
+        oldHighlight = white bold 52
+        newNormal = green bold
+        newHightlight = white bold 22
+[color "diff"]
+        meta = black
+        frag = blue bold
+        commit = black bold
+        old = red bold
+        new = green bold
+        whitespace = red reverse
+
+[include]
+        path = ~/.gitconfig_local

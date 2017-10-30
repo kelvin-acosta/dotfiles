@@ -1,0 +1,29 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'kballard/vim-swift'
+Plug 'junegunn/vim-easy-align'
+Plug 'fatih/vim-go'
+Plug 'vim-ruby/vim-ruby'
+Plug 'plasticboy/vim-markdown'
+Plug 'othree/html5.vim'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
+Plug 'elixir-lang/vim-elixir'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'mattn/emmet-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim'
+call plug#end()
+
+syntax on
+colorscheme onedark
+set laststatus=2
+set guifont="Inconsolata-g-for-powerline"
+set ttyfast
+set backspace=2
+set number
