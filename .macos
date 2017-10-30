@@ -5,9 +5,6 @@ COMPUTERNAME="Kelvin Acosta's MBP"
 HOSTNAME='localhost'
 LOCALHOSTNAME='localhost'
 
-# Sudo
-sudo -v
-
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
