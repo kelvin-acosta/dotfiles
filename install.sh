@@ -40,12 +40,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Symlink dotfiles
-ln -s $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
-ln -s $HOME/.dotfiles/.bashrc $HOME/.bashrc
-ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
-ln -s $HOME/.dotfiles/.gitignore_global $HOME/.gitignore_global
-ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -sfn $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
+ln -sfn $HOME/.dotfiles/.bashrc $HOME/.bashrc
+ln -sfn $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+ln -sfn $HOME/.dotfiles/.gitignore_global $HOME/.gitignore_global
+ln -sfn $HOME/.dotfiles/.vimrc $HOME/.vimrc
+ln -sfn $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
