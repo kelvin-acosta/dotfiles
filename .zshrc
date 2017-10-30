@@ -3,7 +3,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 export PATH=/usr/local/bin/erl:/usr/local/bin/elixir:$PATH
 export PATH=$(go env GOPATH)/bin:$PATH
-export GOPATH=$(go env GOPATH)
+export GOPATH="$HOME/go"
+export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
@@ -83,6 +84,9 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+# Load NVM
+. "/usr/local/opt/nvm/nvm.sh"
 
 # ZSH History
 setopt append_history
