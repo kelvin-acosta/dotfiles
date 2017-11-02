@@ -38,11 +38,6 @@ defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
-# Install Snazzy theme && Set default as default Terminal.app theme
-open ./themes/Snazzy.terminal
-defaults write com.apple.Terminal "Default Window Settings" -string 'Snazzy'
-defaults write com.apple.Terminal "Startup Window Settings" -string 'Snazzy'
-
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
