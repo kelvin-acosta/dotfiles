@@ -47,6 +47,9 @@ ln -sfn $HOME/.dotfiles/.gitignore_global $HOME/.gitignore_global
 ln -sfn $HOME/.dotfiles/.vimrc $HOME/.vimrc
 ln -sfn $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
+# Set global gitignore
+git config --global core.excludesfile ~/.gitignore_global
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
