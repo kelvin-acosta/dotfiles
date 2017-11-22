@@ -27,7 +27,6 @@ brew 'awscli'
 brew 'git'
 brew 'hub'
 brew 'tree'
-brew 'mackup'
 brew 'mas'
 brew 'node'
 brew 'trash'
@@ -76,11 +75,13 @@ cask 'spotify'
 cask 'slack'
 cask 'tunnelbear'
 cask 'postman'
-cask 'vagrant'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
+cask 'vagrant'
 cask 'vlc'
 cask 'spectacle'
+cask 'numi'
+cask 'zeplin'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -96,7 +97,7 @@ cask 'font-inconsolata-g-for-powerline'
 
 # Install Mac App Store apps
 mas 'Xcode', id: 497799835
-mas 'Numbers', id: 409203825
-mas 'Pages', id: 409201541
-mas 'Keynote', id: 409183694
+# mas 'Numbers', id: 409203825
+# mas 'Pages', id: 409201541
+# mas 'Keynote', id: 409183694
 
