@@ -21,9 +21,9 @@
         newNormal = green bold
         newHightlight = white bold 22
 [color "diff"]
-        meta = black
+        meta = white
         frag = blue bold
-        commit = black bold
+        commit = white bold
         old = red bold
         new = green bold
         whitespace = red reverse
