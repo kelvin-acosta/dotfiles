@@ -17,9 +17,6 @@ Plug 'scrooloose/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'crusoexia/vim-monokai'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 call plug#end()
@@ -28,13 +25,11 @@ set t_Co=256
 set term=xterm-256color
 
 syntax on
-colorscheme nord
 
 set laststatus=2
-set guifont="Fira Code"
+set guifont="Hack"
 set ttyfast
 set backspace=2
-set number
 
 let g:lightline = {
   \   'colorscheme': 'nord',
