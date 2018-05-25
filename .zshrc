@@ -91,10 +91,7 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git",   from:oh-my-zsh
-zplug "plugins/osx",   from:oh-my-zsh
-#zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug miekg/lean, use:lean.plugin.zsh, from:github, as:theme
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zsh-users/zsh-syntax-highlighting", defer:3
 
@@ -140,6 +137,8 @@ alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias lcl='colorls -lA --sd'
+alias lc='colorls'
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
@@ -232,3 +231,6 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f $HOME/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . $HOME/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+
+# Colorls Enable tab completion for flags
+source $(dirname $(gem which colorls))/tab_complete.sh
