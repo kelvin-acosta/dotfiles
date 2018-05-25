@@ -30,6 +30,7 @@ set laststatus=2
 set guifont="Hack"
 set ttyfast
 set backspace=2
+set number
 
 let g:lightline = {
   \   'colorscheme': 'nord',
