@@ -3,12 +3,9 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
-tap 'homebrew/dupes'
-tap 'homebrew/php'
 
 # Install ZSH
 brew 'zsh'
-brew 'zsh-completions'
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
@@ -49,6 +46,7 @@ brew 'terraform'
 brew 'erlang'
 brew 'elixir'
 brew 'yarn'
+brew 'swiftlint'
 
 # Tools
 brew 'htop'
@@ -59,7 +57,7 @@ brew 'kops'
 brew 'kubernetes-cli'
 brew 'nmap'
 brew 'vim'
-brew 'zplug'
+brew 'antibody'
 
 # Apps
 cask 'docker'
@@ -97,7 +95,4 @@ cask 'font-inconsolata-g-for-powerline'
 
 # Install Mac App Store apps
 mas 'Xcode', id: 497799835
-# mas 'Numbers', id: 409203825
-# mas 'Pages', id: 409201541
-# mas 'Keynote', id: 409183694
 
