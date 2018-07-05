@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Set Computer name
 COMPUTERNAME="Kelvin Acosta's MBP"
@@ -18,9 +18,19 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 # Show battery life percentage.
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
+# Set dark interface style
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
 ###############################################################################
 # Apple software: Safari, Updater, iTunes, etc.                               #
 ###############################################################################
+
+# Set up Safari for development
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
@@ -85,6 +95,9 @@ defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
 # Always open everything in Finder's list view. This is important.
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
@@ -113,6 +126,10 @@ defaults write com.apple.dock show-process-indicators -bool true
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
+
+# Speeding up Mission Control animations and grouping windows by application
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.dock "expose-group-by-app" -bool true
 
 echo "Success! Defaults are set."
 echo "Some changes will not take effect until you reboot your machine."

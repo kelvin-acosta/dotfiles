@@ -11,22 +11,29 @@
         default = simple
 [diff]
         indentHeuristic = on
-
+[github]
+        user = kelvin-acosta
+[format]
+	pretty = %C(auto)%h - %s%d%n%+b%+N(%G?) %an <%ae> (%C(blue)%ad%C(auto))%n
+[hub]
+        protocol = https
 # Colors
 [color]
         ui = true
 [color "diff-highlight"]
         oldNormal = red bold
-        oldHighlight = white bold 52
+        oldHighlight = red bold 52
         newNormal = green bold
-        newHightlight = white bold 22
+        newHightlight = green bold 22
 [color "diff"]
-        meta = white
-        frag = blue bold
-        commit = white bold
+        meta = yellow
+        frag = magenta bold
+        commit = yellow bold
         old = red bold
         new = green bold
         whitespace = red reverse
 
 [include]
         path = ~/.gitconfig_local
+[url "git@gitlab.fuzzhq.com:"]
+	insteadOf = https://gitlab.fuzzhq.com/

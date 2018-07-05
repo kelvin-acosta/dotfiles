@@ -30,6 +30,7 @@ brew 'trash'
 brew 'wget'
 brew 'vim'
 brew 'parallel'
+brew 'fzf'
 
 # Development
 brew 'php71'
@@ -57,7 +58,7 @@ brew 'kops'
 brew 'kubernetes-cli'
 brew 'nmap'
 brew 'vim'
-brew 'antibody'
+brew 'zplug'
 
 # Apps
 cask 'docker'
