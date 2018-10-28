@@ -18,7 +18,6 @@ Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'arcticicestudio/nord-vim'
-Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
@@ -28,11 +27,12 @@ set term=xterm-256color
 syntax on
 
 colorscheme nord
+set mouse-=a
 set statusline=%=%P\ %f\ %m
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 set laststatus=2
 set noshowmode
-set guifont="Hack"
+set guifont="Fira Code"
 set ttyfast
 set backspace=2
 set number
