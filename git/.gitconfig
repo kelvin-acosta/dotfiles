@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
         name = Kelvin Acosta
-        email = kacosta@fuzzproductions.com
+        email = 16613817+kelvin-acosta@users.noreply.github.com
 [core]
         excludesfile = /Users/kacosta/.gitignore_global
         pager = diff-so-fancy | less --tabs=4 -RFX
