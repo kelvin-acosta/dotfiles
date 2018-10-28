@@ -23,4 +23,3 @@ ln -sfn $HOME/.dotfiles/git/.gitconfig $HOME/.gitconfig
 ln -sfn $HOME/.dotfiles/git/.gitignore_global $HOME/.gitignore_global
 ln -sfn $HOME/.dotfiles/vim/.vimrc $HOME/.vimrc
 ln -sfn $HOME/.dotfiles/zsh/zshrc.zsh $HOME/.zshrc
-ln -sfn $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
