@@ -2,6 +2,7 @@
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
+tap 'homebrew/cask-fonts'  
 
 # Install ZSH
 brew 'zsh'
@@ -28,7 +29,6 @@ brew 'fzf'
 
 # Development
 brew 'php72'
-brew 'php72-xdebug'
 brew 'mysql'
 brew 'go'
 brew 'openssl'
@@ -81,4 +81,9 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 cask 'qlstephen'
+
+# Font
+cask 'font-fira-code'
+cask 'font-fira-mono'
+cask 'font-fira-mono-for-powerline'
 
