@@ -19,6 +19,9 @@ source $HOME/.dotfiles/vim/vim.sh
 # Setup PHP
 source $HOME/.dotfiles/php/setup.sh
 
+# Setup Python
+source $HOME/.dotfiles/python/setup.sh
+
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
