@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Setting and editing of env variables.
 
 # VARS
@@ -10,17 +12,21 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$HOME/.rbenv/shims:$PATH
-export PATH=$HOME/.composer/vendor/bin:$PATH
-export PATH=$HOME/Library/Python/2.6/bin:$PATH
-export PATH=$HOME/Library/Python/3.7/bin:$PATH
-export PATH=/usr/local/bin/erl:/usr/local/bin/elixir:$PATH
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin/erl:/usr/local/bin/elixir:$PATH"
 export GOPATH="$HOME/.go"
-export PATH=$GOPATH/bin:$PATH
-export NVM_DIR="$HOME/.nvm"
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH="$GOPATH/bin:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/tools"
+export PATH="$ANDROID_HOME/platform-tools"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+eval "$(pyenv init -)"
+eval "$(jenv init -)"
 
 typeset -U PATH # Remove duplicates in $PATH

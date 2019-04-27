@@ -1,8 +1,8 @@
 {
   "editor.tabSize": 2,
   "editor.scrollBeyondLastLine": false,
-  "editor.lineNumbers": "off",
-  "editor.renderIndentGuides": false,
+  "editor.lineNumbers": "on",
+  "editor.renderIndentGuides": true,
   "editor.renderLineHighlight": "none",
   "editor.formatOnSave": true,
   "editor.fontFamily": "Fira Code",
@@ -31,9 +31,10 @@
   "php.validate.executablePath": "/usr/bin/php",
   "terminal.integrated.fontSize": 16,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "dark-plus-syntax",
-  "workbench.iconTheme": null,
+  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+  "workbench.tree.horizontalScrolling": true,
   "workbench.editor.showIcons": false,
   "workbench.activityBar.visible": false,
   "extensions.ignoreRecommendations": true,
+  "workbench.colorTheme": "Monokai Pro (Filter Octagon)"
 }
