@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Setting and editing of env variables.
 
 # VARS
@@ -17,8 +15,8 @@ export PATH="/usr/local/bin/erl:/usr/local/bin/elixir:$PATH"
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$ANDROID_HOME/tools"
-export PATH="$ANDROID_HOME/platform-tools"
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
