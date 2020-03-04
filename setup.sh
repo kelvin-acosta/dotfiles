@@ -10,7 +10,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Set Mac OS Default
 source $HOME/.dotfiles/macos/set-defaults.sh
 
-# Install Brew & Brewfile
+# Install Brew & Bundle Brewfile
 source $HOME/.dotfiles/brew/setup.sh
 
 # Setup Vim
@@ -19,11 +19,8 @@ source $HOME/.dotfiles/vim/vim.sh
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
-# Setup fzf
-$(brew --prefix)/opt/fzf/install
-
-# Create a Projects directory
-mkdir "$HOME/Projects"
+# Create a src dir
+mkdir "$HOME/src"
 
 # Symlink dotfiles
 ln -sfn "$HOME/.dotfiles/git/.gitconfig" "$HOME/.gitconfig"

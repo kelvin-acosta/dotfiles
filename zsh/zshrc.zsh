@@ -1,10 +1,12 @@
-source ~/.dotfiles/zsh/zplug.zsh # Load zsh plugins
-source ~/.dotfiles/zsh/env.zsh
-source ~/.dotfiles/zsh/options.zsh
-source ~/.dotfiles/zsh/functions/functions.zsh
-source ~/.dotfiles/zsh/functions/fzf-functions.zsh
-source ~/.dotfiles/zsh/bindings.zsh
-source ~/.dotfiles/zsh/alias.zsh
+source $HOME/.dotfiles/zsh/env.zsh
+source $HOME/.dotfiles/zsh/options.zsh
+source $HOME/.dotfiles/zsh/bindings.zsh
+source $HOME/.dotfiles/zsh/alias.zsh
+source $HOME/.dotfiles/zsh/functions/functions.zsh
+source $HOME/.dotfiles/zsh/iterm2_shell_integration.zsh
+source $HOME/.dotfiles/zsh/zinit.zsh
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+eval "$(pyenv init -)"
+eval "$(jenv init -)"

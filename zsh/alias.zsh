@@ -9,6 +9,8 @@ alias sshconfig="vim ~/.ssh/config"
 # MAKE TERMINAL BETTER
 # -----------------------------
 
+alias src='cd ~/src'
+alias be='bundle exec'
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
@@ -156,3 +158,4 @@ alias gstp='git stash pop'
 alias gsts='git stash show --text'
 alias gsu='git submodule update'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
+alias gbdme='git branch | grep 'kelvin' | xargs git branch -D'

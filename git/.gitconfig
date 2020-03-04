@@ -35,5 +35,3 @@
 
 [include]
         path = ~/.gitconfig_local
-[url "git@gitlab.fuzzhq.com:"]
-	insteadOf = https://gitlab.fuzzhq.com/
