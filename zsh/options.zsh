@@ -43,9 +43,6 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 # Don't write duplicate entries in the history file.
 setopt HIST_SAVE_NO_DUPS
-# this option both imports new commands from the history file, and also causes your typed command
-setopt SHARE_HISTORY
-
 
 # ===== Completion
 # show completion menu on successive tab press ... needs unsetop menu_complete to work

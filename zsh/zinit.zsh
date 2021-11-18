@@ -1,5 +1,5 @@
 ### Added by zinit's installer
-source ~/.zinit/bin/zinit.zsh
+source ~/.local/share/zinit/zinit.git/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of zinit's installer chunk
@@ -12,11 +12,9 @@ zinit from"gh-r" as"program" mv"direnv* -> direnv" \
     pick"direnv" src="zhook.zsh" for \
         direnv/direnv
 
-## Starship Prompt
-zinit from"gh-r" as"program" mv"starship* -> starship" \
-    atclone'./starship init zsh > zhook.zsh' atpull'%atclone' \
-    pick"starship" src="zhook.zsh" for \
-        starship/starship
+## Powerlevel10k
+zinit ice depth"1"
+zinit light romkatv/powerlevel10k
 
 # Fzf
 zinit ice from"gh-r" as"program"
@@ -32,18 +30,16 @@ zinit ice atclone"gdircolors -b LS_COLORS > clrs.zsh" \
         zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
 zinit light trapd00r/LS_COLORS
 
-# OMZ Plugins
-zinit wait lucid for \
-
 ## autocompletion
 zinit snippet OMZ::lib/completion.zsh
+
 zinit wait lucid for \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-        zdharma/fast-syntax-highlighting \
-        OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
+    atinit"zicompinit; zicdreplay" \
+        zdharma-continuum/fast-syntax-highlighting \
+        OMZP::colored-man-pages \
     as"completion" \
-        OMZ::plugins/docker/_docker \
-    blockf \
-        zsh-users/zsh-completions \
-    atload"!_zsh_autosuggest_start" \
-        zsh-users/zsh-autosuggestions
+        OMZ::plugins/terraform/_terraform \
+    atload"_zsh_autosuggest_start" \
+        zsh-users/zsh-autosuggestions \
+    blockf atpull'zinit creinstall -q .' \
+        zsh-users/zsh-completions

@@ -1,14 +1,17 @@
 # This is Git's per-user configuration file.
 [user]
         name = Kelvin Acosta
-        email = 16613817+kelvin-acosta@users.noreply.github.com
+	email = kelvin.acosta@betterment.com
 [core]
-        excludesfile = /Users/kacosta/.gitignore_global
+        excludesfile = /Users/kelvinacosta/.gitignore_global
         pager = diff-so-fancy | less --tabs=4 -RFX
+	hooksPath = /Users/kelvinacosta/.git-templates/hooks
 [credential]
-        helper = osxkeychain
+	helper = osxkeychain
 [push]
         default = simple
+[pull]
+        rebase = false
 [diff]
         indentHeuristic = on
 [github]
@@ -35,3 +38,5 @@
 
 [include]
         path = ~/.gitconfig_local
+[init]
+	templatedir = /Users/kelvinacosta/.git-templates

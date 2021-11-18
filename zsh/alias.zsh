@@ -100,6 +100,7 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 # GIT
 # ---------------------------
 
+alias gpr='gh pr create'
 alias gcshort='git rev-parse --short HEAD'
 alias g=git
 alias ga='git add'
@@ -159,3 +160,6 @@ alias gsts='git stash show --text'
 alias gsu='git submodule update'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gbdme='git branch | grep 'kelvin' | xargs git branch -D'
+
+alias mycoach="RBENV_VERSION=$(cat $HOME/src/coach/coach_cli/.ruby-version) BUNDLE_GEMFILE=$HOME/src/coach/coach_cli/Gemfile bundle exec $HOME/src/coach/coach_cli/exe/coach"
+alias myrudder="RBENV_VERSION=$(cat $HOME/src/rudder/.ruby-version) BUNDLE_GEMFILE=$HOME/src/rudder/Gemfile bundle exec $HOME/src/rudder/exe/rudder"

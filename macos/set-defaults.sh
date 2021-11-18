@@ -39,14 +39,8 @@ defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
-# Check for software updates daily, not just once per week.
-defaults write com.assple.SoftwareUpdate ScheduleFrequency -int 1
-
 # Disable Swipe controls for Google Chrome
 defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
-
-# Use AirDrop over every interface. srsly this should be a default.
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -58,9 +52,6 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 ###############################################################################
 # Interfaces: trackpad, mouse, keyboard, bluetooth, etc.
 ###############################################################################
-
-# Disable press-and-hold for keys in favor of key repeat.
-defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Map bottom right corner of Apple trackpad to right-click.
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
@@ -85,7 +76,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # Disable and kill Dashboard
 # Can be reverted with:
-# defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Doc
+# defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock
 defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock
 
 ###############################################################################

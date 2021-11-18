@@ -4,6 +4,10 @@
 *.sql
 *.sqlite
 
+# Dependencies #
+################
+vendor/
+
 # OS generated files #
 ######################
 .DS_Store
@@ -23,6 +27,7 @@ Thumbs.db
 #######
 .idea
 .vscode
+.solargraph.yml
 
 # Unit test / coverage reports #
 ################################

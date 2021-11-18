@@ -4,17 +4,11 @@ tap 'caskroom/versions'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 
-# Install ZSH
-brew 'zsh'
-
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew 'findutils'
-
-# Install Bash 4
-brew 'bash'
 
 # Install more recent versions of some macOS tools
 brew 'grep'
@@ -23,20 +17,17 @@ brew 'grep'
 brew 'awscli'
 brew 'diff-so-fancy'
 brew 'fzf'
-brew 'git-lfs'
 brew 'git'
 brew 'gnu-sed'
 brew 'htop'
-brew 'httping'
 brew 'kubernetes-cli'
 brew 'helm'
 brew 'nmap'
-brew 'parallel'
 brew 'vim'
 brew 'wget'
 
 # Development
-brew 'elixir'
+# brew 'elixir'
 brew 'go'
 brew 'hadolint'
 brew 'jenv'
@@ -48,26 +39,8 @@ brew 'postgresql@11'
 brew 'pyenv'
 brew 'rbenv'
 brew 'shellcheck'
-brew 'swiftlint'
-brew 'terraform'
 brew 'tfenv'
 brew 'yarn'
-
-# Apps
-# cask 'docker'
-# cask 'firefox'
-# cask 'google-chrome'
-# cask 'insomnia'
-# cask 'iterm2'
-# cask 'postman'
-# cask 'sequel-pro'
-# cask 'spotify'
-# cask 'vagrant'
-# cask 'virtualbox-extension-pack'
-# cask 'virtualbox'
-# cask 'visual-studio-code'
-# cask 'vlc'
-cask 'spectacle'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -80,4 +53,5 @@ cask 'qlstephen'
 cask 'font-firacode-nerd-font'
 cask 'font-firacode-nerd-font-mono'
 cask 'font-fira-code'
+cask 'font-jetbrains-mono'
 cask 'font-input'
