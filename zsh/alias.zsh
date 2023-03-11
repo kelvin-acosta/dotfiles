@@ -2,7 +2,6 @@
 # CONFIG
 # -----------------------------
 
-alias zshconfig="vim ~/.zshrc"
 alias sshconfig="vim ~/.ssh/config"
 
 # -----------------------------
@@ -26,10 +25,7 @@ alias f='open -a Finder ./'                 # f:            Opens current direct
 alias ~="cd ~"                              # ~:            Go Home
 alias c='clear'                             # c:            Clear terminal display
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
-alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
 alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}' # grep: excluse certain dirs
-mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
-trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 
 # -------------------------------
 # FILE AND FOLDER MANAGEMENT
@@ -157,9 +153,9 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash show --text'
-alias gsu='git submodule update'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gbdme='git branch | grep 'kelvin' | xargs git branch -D'
 
+alias antipurge='rm -rf `antidote home` && rm ${ZDOTDIR:-~}/.zsh_plugins.zsh';
 alias mycoach="RBENV_VERSION=$(cat $HOME/src/coach/coach_cli/.ruby-version) BUNDLE_GEMFILE=$HOME/src/coach/coach_cli/Gemfile bundle exec $HOME/src/coach/coach_cli/exe/coach"
 alias myrudder="RBENV_VERSION=$(cat $HOME/src/rudder/.ruby-version) BUNDLE_GEMFILE=$HOME/src/rudder/Gemfile bundle exec $HOME/src/rudder/exe/rudder"

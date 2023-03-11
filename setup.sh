@@ -17,7 +17,11 @@ source $HOME/.dotfiles/brew/setup.sh
 source $HOME/.dotfiles/vim/vim.sh
 
 # Make ZSH the default shell environment
-chsh -s $(which zsh)
+chsh -s " $(which zsh)"
+
+# Install Antidote
+git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-~}/.antidote"
+ln -sfn "$HOME/.dotfiles/zsh/.zsh_plugins.txt" "$HOME/.zsh_plugins.txt"
 
 # Create a src dir
 mkdir "$HOME/src"

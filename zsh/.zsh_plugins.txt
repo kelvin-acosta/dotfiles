@@ -1,0 +1,23 @@
+# .zsh_plugins.txt
+# https://getantidote.github.io/usage
+
+# other
+rupa/z
+junegunn/fzf path:shell kind:zsh
+
+# prompts
+romkatv/powerlevel10k
+
+# oh-my-zsh plugins
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/docker
+ohmyzsh/ohmyzsh path:plugins/terraform
+
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+zdharma-continuum/fast-syntax-highlighting kind:defer
+
+mattmc3/zephyr path:plugins/directory
+mattmc3/zephyr path:plugins/color
+mattmc3/zephyr path:plugins/completion
