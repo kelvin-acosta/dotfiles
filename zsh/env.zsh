@@ -6,12 +6,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export TERM="xterm-256color"
 
 # VARS
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
 export EDITOR="vim"
 export SUDO_EDITOR="vim"
 export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
-export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libffi/lib"
-export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/libffi/include"
-export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/libffi/lib/pkgconfig"
+export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libffi/lib -L/opt/homebrew/opt/libpq/lib $LDFLAGS"
+export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/libffi/include -I/opt/homebrew/opt/libpq/include $CPPFLAGS"
+export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/libffi/lib/pkgconfig:/opt/homebrew/opt/libpq/lib/pkgconfig:$PKG_CONFIG_PATH"
 export CFLAGS=-Qunused-arguments
 export CPPFLAGS=-Qunused-arguments
 
@@ -24,6 +25,8 @@ export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOMEBREW_PREFIX/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH=/opt/homebrew/opt/libpq/bin:$PATH
 
 ## PYTHON PATHS
 export PYENV_ROOT="$HOME/.pyenv"

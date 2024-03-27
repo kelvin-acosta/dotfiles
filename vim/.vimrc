@@ -25,7 +25,7 @@ syntax enable
 set t_Co=256
 set term=xterm-256color
 set laststatus=2
-set guifont="Fira Mono"
+set guifont="JetBrains Mono"
 set ttyfast
 set backspace=2
 set number

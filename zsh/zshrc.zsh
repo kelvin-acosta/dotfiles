@@ -27,3 +27,5 @@ antidote load
 
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
+
+eval "$(direnv hook zsh)"

@@ -155,7 +155,11 @@ alias gstp='git stash pop'
 alias gsts='git stash show --text'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gbdme='git branch | grep 'kelvin' | xargs git branch -D'
-
+alias k='kubectl'
 alias antipurge='rm -rf `antidote home` && rm ${ZDOTDIR:-~}/.zsh_plugins.zsh';
 alias mycoach="RBENV_VERSION=$(cat $HOME/src/coach/coach_cli/.ruby-version) BUNDLE_GEMFILE=$HOME/src/coach/coach_cli/Gemfile bundle exec $HOME/src/coach/coach_cli/exe/coach"
 alias myrudder="RBENV_VERSION=$(cat $HOME/src/rudder/.ruby-version) BUNDLE_GEMFILE=$HOME/src/rudder/Gemfile bundle exec $HOME/src/rudder/exe/rudder"
+alias awslogin="saml2aws login --skip-prompt --force -a"
+alias awsexec="saml2aws exec -a"
+alias kpry="kill -9 $(lsof -ti tcp:9876)"
+alias assh="aws ssm start-session --target"
