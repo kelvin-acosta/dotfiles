@@ -13,8 +13,8 @@ source $HOME/.dotfiles/macos/set-defaults.sh
 # Install Brew & Bundle Brewfile
 source $HOME/.dotfiles/brew/setup.sh
 
-# Setup Vim
-source $HOME/.dotfiles/vim/vim.sh
+# Setup nvim
+source $HOME/.dotfiles/nvim/setup.sh
 
 # Make ZSH the default shell environment
 chsh -s " $(which zsh)"
@@ -29,7 +29,6 @@ mkdir "$HOME/src"
 # Symlink dotfiles
 ln -sfn "$HOME/.dotfiles/git/.gitconfig" "$HOME/.gitconfig"
 ln -sfn "$HOME/.dotfiles/git/.gitignore_global" "$HOME/.gitignore_global"
-ln -sfn "$HOME/.dotfiles/vim/.vimrc" "$HOME/.vimrc"
 ln -sfn "$HOME/.dotfiles/zsh/zshrc.zsh" "$HOME/.zshrc"
 
 echo "Done"

@@ -3,12 +3,12 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # TERM
-export TERM="xterm-256color"
+export TERM=xterm-256color
 
 # VARS
 export ZSH_CACHE_DIR="$HOME/.cache/zsh"
-export EDITOR="vim"
-export SUDO_EDITOR="vim"
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
 export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libffi/lib -L/opt/homebrew/opt/libpq/lib $LDFLAGS"
 export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/libffi/include -I/opt/homebrew/opt/libpq/include $CPPFLAGS"
@@ -24,16 +24,15 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOMEBREW_PREFIX/bin:$PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=/opt/homebrew/opt/libpq/bin:$PATH
 
 ## PYTHON PATHS
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH=$HOME/Library/Python/3.7/bin:$PATH
-export PATH=$HOME/Library/Python/3.8/bin:$PATH
 export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:${PATH}"
+export PATH=$HOME/Library/Python/3.9/bin:$PATH
 
 export SDM_EMAIL="kelvin.acosta@betterment.com"
 
