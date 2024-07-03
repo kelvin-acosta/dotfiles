@@ -30,3 +30,4 @@ autoload -Uz compinit && compinit
 
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
+eval "$(rbenv init -)"

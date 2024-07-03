@@ -33,8 +33,10 @@ nnoremap gV `[v`]
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 Plug 'tpope/vim-fugitive'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'junegunn/vim-easy-align'  " EasyAlign
@@ -48,9 +50,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-gitbranch'
-Plug 'macthecadillac/lightline-gitdiff'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'mfussenegger/nvim-lint'
 Plug 'dhruvasagar/vim-table-mode'
@@ -58,14 +57,6 @@ Plug 'echasnovski/mini.indentscope'  " indent textobject
 call plug#end()
 
 colorscheme kanagawa
-
-" fzf settings (see also :Lines :Tags :Btags) l=directory local files
-nnoremap <leader>b <cmd>Buffers<cr>
-nnoremap <leader>f <cmd>GFiles<cr>
-nnoremap <leader>F <cmd>Files<cr>
-nnoremap <leader>l <cmd>Files %:h<cr>
-" let g:fzf_action = {'ctrl-q': 'fill_quickfix'}
-let g:fzf_preview_window = ['hidden', 'ctrl-o']
 
 " fugitive settings (see also :G :Gvdiffsplit master:%)
 nnoremap <leader>g :Ggrep -q <c-r><c-w>
@@ -86,8 +77,6 @@ nmap ga <Plug>(EasyAlign)
 
 augroup init_group
   autocmd!
-  " Automatically apply update to config files with chezmoi
-  autocmd BufWritePost ~/.local/share/chezmoi/[^.]* ! chezmoi apply --source-path <afile>
   " Trim trailing whitespace on save (circumvent w :noautocmd w)
   autocmd BufWritePre * let pos = getpos(".") | %s/\s\+$//e | call setpos(".", pos)
   " give feedback on yanked text
@@ -108,7 +97,6 @@ augroup END
 "call setqflist(map(getqflist(), 'extend(v:val, {"text":get(getbufline(v:val.bufnr, v:val.lnum),0)})'))
 
 set backspace=indent,eol,start
-set number
 set cursorline          " highlight current line
 set scrolloff=3         " number of screen lines to show around the cursor
 set sidescrolloff=2     " min # of columns to keep left/right of cursor
@@ -131,7 +119,9 @@ set smartindent
 set gdefault            " for :substitute, use the /g flag by default
 set mouse=
 set formatoptions-=t    " Don't automatically format code on insert
-let g:markdown_folding=1
+set foldlevel=99
+set number
+set relativenumber
 
 nnoremap <s-Up>    <cmd>resize +10<cr>
 nnoremap <s-Down>  <cmd>resize -10<cr>
@@ -139,19 +129,12 @@ nnoremap <s-Left>  <cmd>vertical resize +20<cr>
 nnoremap <s-Right> <cmd>vertical resize -20<cr>
 
 lua <<END
-
-vim.g.lightline = {
-  colorscheme = 'wombat',
-  active = {
-    left = {
-      { 'mode', 'paste' },
-      { 'gitbranch', 'readonly', 'filename', 'modified' },
-    }
-  },
-  component_function = {
-    gitbranch = 'FugitiveHead'
-  }
-}
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ps', function()
+  builtin.grep_string({ search = vim.fn.input("Grep > ") });
+end)
 
 local lsp = require('lspconfig')
 lsp.util.default_config = vim.tbl_extend( "force", lsp.util.default_config,
@@ -159,6 +142,7 @@ lsp.util.default_config = vim.tbl_extend( "force", lsp.util.default_config,
 -- This is coupled with config files:
 --   ~/.config/pycodestyle
 --   ~/.config/pylintrc
+
 lsp.pylsp.setup { settings = { pylsp = { plugins = { pylint = { enabled = true }}}}}
 lsp.clangd.setup { cmd = {"clangd", "--clang-tidy", "--background-index", "--cross-file-rename"}}
 

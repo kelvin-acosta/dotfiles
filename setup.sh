@@ -24,7 +24,7 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-~}/.anti
 ln -sfn "$HOME/.dotfiles/zsh/.zsh_plugins.txt" "$HOME/.zsh_plugins.txt"
 
 # Create a src dir
-mkdir "$HOME/src"
+mkdir -p "$HOME/src"
 
 # Symlink dotfiles
 ln -sfn "$HOME/.dotfiles/git/.gitconfig" "$HOME/.gitconfig"
