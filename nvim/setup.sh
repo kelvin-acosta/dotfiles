@@ -8,5 +8,5 @@ pushd /tmp || exit
   sudo mv nvim.appimage /usr/bin/nvim
 popd || exit
 
-mkdir -p "$HOME/.config/nvim"
-ln -sfn "$HOME/.dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+mkdir -p "$HOME/.config"
+ln -sfn "$HOME/.dotfiles/nvim" "$HOME/.config/"

@@ -158,6 +158,7 @@ alias k='kubectl'
 alias antipurge='rm -rf `antidote home` && rm $HOME/.zsh_plugins.zsh';
 alias kpry="kill -9 $(lsof -ti tcp:9876)"
 alias assh="aws ssm start-session --target"
+alias vim="nvim"
 
 OS=$(uname -o)
 if [ "$OS" = "Darwin" ]; then
