@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # diff-so-fancy
-wget -nc https://ppa.launchpadcontent.net/aos1/diff-so-fancy/ubuntu/pool/main/d/diff-so-fancy/diff-so-fancy/ubuntu/pool/main/d/diff-so-fancy/diff-so-fancy_1.4.4-1ubuntu1_all.deb
+wget -nc https://ppa.launchpadcontent.net/aos1/diff-so-fancy/ubuntu/pool/main/d/diff-so-fancy/diff-so-fancy_1.4.4-1ubuntu1_all.deb
 sudo dpkg -i diff-so-fancy_1.4.4-1ubuntu1_all.deb
 rm diff-so-fancy_1.4.4-1ubuntu1_all.deb
 

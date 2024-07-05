@@ -39,6 +39,7 @@ sudo apt-get install -y --no-install-recommends \
   libxrender1 \
   libyaml-dev \
   libz-dev \
+  lsof \
   make \
   man-db \
   openssl \

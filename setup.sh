@@ -22,7 +22,7 @@ source "$HOME/.dotfiles/nvim/setup.sh"
 chsh -s "$(which zsh)"
 
 # Install Antidote
-git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-~}/.antidote"
+git clone --depth=1 https://github.com/mattmc3/antidote.git "$HOME/.antidote"
 ln -sfn "$HOME/.dotfiles/zsh/.zsh_plugins.txt" "$HOME/.zsh_plugins.txt"
 
 # Create a src dir
