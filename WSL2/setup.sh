@@ -44,6 +44,7 @@ sudo apt-get install -y --no-install-recommends \
   man-db \
   openssl \
   postgresql-client \
+  ripgrep \
   shellcheck \
   software-properties-common \
   tk-dev
