@@ -9,7 +9,7 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Betterment
-source "$HOME/.bootstrap/env.sh"
+# source "$HOME/.bootstrap/env.sh"
 
 # dotfiles
 source $HOME/.dotfiles/zsh/iterm2_shell_integration.zsh
@@ -29,5 +29,10 @@ autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
 eval "$(direnv hook zsh)"
-eval "$(pyenv init -)"
-eval "$(rbenv init -)"
+eval "$(pyenv init - zsh)"
+eval "$(rbenv init - zsh)"
+eval "$(nodenv init - zsh)"
+eval "$(goenv init - zsh)"
+
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"

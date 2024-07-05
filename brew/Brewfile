@@ -7,16 +7,12 @@ tap 'homebrew/cask-fonts'
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
 
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew 'findutils'
-
-# Install more recent versions of some macOS tools
-brew 'grep'
-
 # Install Tools
+brew 'grep'
 brew 'awscli'
 brew 'diff-so-fancy'
 brew 'fzf'
+brew 'findutils'
 brew 'git'
 brew 'gnu-sed'
 brew 'htop'
@@ -29,8 +25,8 @@ brew 'wget'
 # Development
 brew 'mysql'
 brew 'openssl'
-brew 'postgresql@11'
-brew 'go'
+brew 'postgresql@15'
+brew 'goenv'
 brew 'jenv'
 brew 'nodenv'
 brew 'pyenv'
@@ -48,6 +44,4 @@ cask 'quicklook-csv'
 cask 'qlstephen'
 
 # Font
-cask 'font-fira-code'
 cask 'font-jetbrains-mono'
-cask 'font-input'

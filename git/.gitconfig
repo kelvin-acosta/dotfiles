@@ -1,42 +1,42 @@
 # This is Git's per-user configuration file.
 [user]
-        name = Kelvin Acosta
-	email = kelvin.acosta@betterment.com
+  name = Kelvin Acosta
+	email = kelvinacostac@gmail.com
 [core]
-        excludesfile = /Users/kelvinacosta/.gitignore_global
-        pager = diff-so-fancy | less --tabs=4 -RFX
-	hooksPath = /Users/kelvinacosta/.git-templates/hooks
-[credential]
-	helper = osxkeychain
+  excludesfile = ~/.gitignore_global
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [push]
-        default = simple
+  default = simple
 [pull]
-        rebase = false
+  rebase = false
 [diff]
-        indentHeuristic = on
+  indentHeuristic = on
 [github]
-        user = kelvin-acosta
+  user = kelvin-acosta
 [format]
 	pretty = %C(auto)%h - %s%d%n%+b%+N(%G?) %an <%ae> (%C(blue)%ad%C(auto))%n
 [hub]
-        protocol = https
+  protocol = https
 # Colors
 [color]
-        ui = true
+  ui = true
 [color "diff-highlight"]
-        oldNormal = red bold
-        oldHighlight = red bold 52
-        newNormal = green bold
-        newHightlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHightlight = green bold 22
 [color "diff"]
-        meta = yellow
-        frag = magenta bold
-        commit = yellow bold
-        old = red bold
-        new = green bold
-        whitespace = red reverse
-
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
 [include]
-        path = ~/.gitconfig_local
+  path = ~/.gitconfig_local
 [init]
-	templatedir = /Users/kelvinacosta/.git-templates
+	defaultBranch = main
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential

@@ -9,15 +9,12 @@ Plug 'ekalinin/dockerfile.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'macthecadillac/lightline-gitdiff'
 Plug 'ryanoasis/vim-devicons'
-Plug 'haishanh/night-owl.vim'
-Plug 'cormacrelf/vim-colors-github'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
 
