@@ -47,7 +47,8 @@ sudo apt-get install -y --no-install-recommends \
   ripgrep \
   shellcheck \
   software-properties-common \
-  tk-dev
+  tk-dev \
+  unzip
 
 # wslutils
 wget -O - https://pkg.wslutiliti.es/public.key | sudo gpg -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor
