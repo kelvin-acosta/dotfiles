@@ -19,7 +19,7 @@ fi
 source "$HOME/.dotfiles/nvim/setup.sh"
 
 # Make ZSH the default shell environment
-chsh -s " $(which zsh)"
+chsh -s "$(which zsh)"
 
 # Install Antidote
 git clone --depth=1 https://github.com/mattmc3/antidote.git "${ZDOTDIR:-~}/.antidote"
