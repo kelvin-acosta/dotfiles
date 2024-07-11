@@ -72,3 +72,12 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-b
 
 # goenv
 git clone https://github.com/go-nv/goenv.git "$HOME/.goenv"
+
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# mojo
+curl -s https://get.modular.com | sh -
+
+# ruff
+curl -LsSf https://astral.sh/ruff/install.sh | sh

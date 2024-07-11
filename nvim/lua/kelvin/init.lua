@@ -3,8 +3,6 @@ require("kelvin.remap")
 
 require("kelvin.lazy_init")
 
-vim.cmd.colorscheme("catppuccin")
-
 local augroup = vim.api.nvim_create_augroup
 local KelvinGroup = augroup('Kelvin', {})
 
