@@ -3,9 +3,7 @@
 
 # other
 rupa/z
-junegunn/fzf kind:clone
 junegunn/fzf path:shell kind:zsh
-junegunn/fzf path:bin kind:path
 
 # prompts
 romkatv/powerlevel10k
@@ -13,6 +11,7 @@ romkatv/powerlevel10k
 # oh-my-zsh plugins
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 ohmyzsh/ohmyzsh path:plugins/terraform
+ohmyzsh/ohmyzsh path:plugins/git
 
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions

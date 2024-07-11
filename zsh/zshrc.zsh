@@ -20,11 +20,11 @@ source "$HOME/.cargo/env"
 ## source antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
-## initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
-antidote load
-
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
+
+## initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
 
 eval "$(direnv hook zsh)"
 eval "$(pyenv init - zsh)"

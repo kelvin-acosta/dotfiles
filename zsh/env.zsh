@@ -10,7 +10,7 @@ export SUDO_EDITOR="nvim"
 
 # MacOS
 OS=$(uname -o)
-if [ "$OS" = "Darwin" ]; then
+if [[ "$OS" = "Darwin" ]]; then
   export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
   export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libffi/lib -L/opt/homebrew/opt/libpq/lib $LDFLAGS"
   export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/libffi/include -I/opt/homebrew/opt/libpq/include $CPPFLAGS"
