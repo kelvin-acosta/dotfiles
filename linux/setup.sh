@@ -50,6 +50,17 @@ sudo apt-get install -y --no-install-recommends \
   tk-dev \
   unzip
 
+# https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package
+NVIM_VERSION="0.10.1"
+pushd /tmp || exit
+  wget -nc https://github.com/neovim/neovim/releases/download/v${NVIM_VERSION}/nvim.appimage
+  chmod u+x nvim.appimage
+  sudo mv nvim.appimage /usr/bin/nvim
+popd || exit
+
+mkdir -p "$HOME/.config"
+ln -sfn "$HOME/.dotfiles/nvim" "$HOME/.config/"
+
 # wslutils
 wget -O - https://pkg.wslutiliti.es/public.key | sudo gpg -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor
 echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.pgp] https://pkg.wslutiliti.es/debian \
@@ -57,21 +68,8 @@ echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.pgp] https://pkg.w
 sudo apt update
 sudo apt install wslu -y --no-install-recommends
 
-# pyenv
-git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
-cd "$HOME/.pyenv" && src/configure && make -C src
-
-# nodenv
-git clone https://github.com/nodenv/nodenv.git "$HOME/.nodenv"
-cd "$HOME/.nodenv" && src/configure && make -C src
-git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
-
-# rbenv
-git clone https://github.com/rbenv/rbenv.git "$HOME/.rbenv"
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
-
-# goenv
-git clone https://github.com/go-nv/goenv.git "$HOME/.goenv"
+# mise https://mise.jdx.dev/getting-started.html#_1-install-mise-cli
+curl https://mise.run | sh
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

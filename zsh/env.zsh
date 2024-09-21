@@ -1,4 +1,6 @@
-# Setting and editing of env variables.
+# Setting of env variables.
+
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Term
 export TERM=xterm-256color
@@ -6,7 +8,7 @@ export ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
 # Editor
 export EDITOR="nvim"
-export SUDO_EDITOR="nvim"
+export SUDO_EDITOR="$EDITOR"
 
 # MacOS
 OS=$(uname -o)
@@ -15,10 +17,13 @@ if [[ "$OS" = "Darwin" ]]; then
   export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libffi/lib -L/opt/homebrew/opt/libpq/lib $LDFLAGS"
   export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/libffi/include -I/opt/homebrew/opt/libpq/include $CPPFLAGS"
   export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/libffi/lib/pkgconfig:/opt/homebrew/opt/libpq/lib/pkgconfig:$PKG_CONFIG_PATH"
+  export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
   export CFLAGS=-Qunused-arguments
   export CPPFLAGS=-Qunused-arguments
   export PATH=$HOMEBREW_PREFIX/bin:$PATH
   export PATH=/opt/homebrew/opt/libpq/bin:$PATH
+  export DOCKER_DEFAULT_PLATFORM=linux/amd64
+  export PATH="$HOME/.bootstrap/resources/bin:$PATH"
 fi
 
 # LS COLOR
@@ -28,22 +33,6 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Path
 export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH="$HOME/.krew/bin:$PATH"
-
-# Go
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-
-## Python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-## Ruby
-export RBENV_ROOT="$HOME/.rbenv"
-export PATH="$RBENV_ROOT/bin:$PATH"
-
-## Node
-export NODENV_ROOT="$HOME/.nodenv"
-export PATH="$NODENV_ROOT/bin:$PATH"
 
 ## Rust
 export PATH="$HOME/.cargo/bin:$PATH"

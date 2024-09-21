@@ -17,3 +17,7 @@ brew update
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
 brew bundle --file="$BASE_DIR/brew/Brewfile"
+
+mkdir -p ~/.docker/cli-plugins
+ln -sfn "${HOMEBREW_PREFIX}/opt/docker-buildx/bin/docker-buildx" "${HOME}/.docker/cli-plugins/docker-buildx"
+ln -sfn "${HOMEBREW_PREFIX}/opt/docker-compose/bin/docker-compose" "${HOME}/.docker/cli-plugins/docker-compose"

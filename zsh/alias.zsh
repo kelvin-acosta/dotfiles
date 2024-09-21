@@ -95,9 +95,31 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 # GIT
 # ---------------------------
 
-alias gpr='gh pr create'
-alias gcshort='git rev-parse --short HEAD'
+alias g='git'
+alias ga='git add'
 alias gbdme='git branch | grep 'kelvin' | xargs git branch -D'
+alias gb='git branch'
+alias gbl='git blame -w'
+alias gclean='git clean --interactive -d'
+alias gcmsg='git commit --message'
+alias gco='git checkout'
+alias gcshort='git rev-parse --short HEAD'
+alias gd='git diff'
+alias gdca='git diff --cached'
+alias gds='git diff --staged'
+alias gfa='git fetch --all --tags --prune --jobs=10'
+alias gl='git pull'
+alias gp='git push'
+alias gpristine='git reset --hard && git clean --force -dfx'
+alias grb='git rebase'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias gsh='git show'
+alias gss='git status --short'
+alias gst='git status'
+alias gsw='git switch'
+alias gswc='git switch --create'
+alias ghpr='gh pr create'
 
 # ---------------------------
 # OTHER
@@ -110,8 +132,9 @@ alias vim="nvim"
 
 OS=$(uname -o)
 if [ "$OS" = "Darwin" ]; then
+  alias sopsorific="sopsorific_shim_sso"
+  alias coach="coach_shim_sso"
   alias awslogin="saml2aws login --skip-prompt --force -a"
   alias awsexec="saml2aws exec -a"
   alias mycoach="RBENV_VERSION=$(cat $HOME/src/coach/coach_cli/.ruby-version) BUNDLE_GEMFILE=$HOME/src/coach/coach_cli/Gemfile bundle exec $HOME/src/coach/coach_cli/exe/coach"
-  alias myrudder="RBENV_VERSION=$(cat $HOME/src/rudder/.ruby-version) BUNDLE_GEMFILE=$HOME/src/rudder/Gemfile bundle exec $HOME/src/rudder/exe/rudder"
 fi

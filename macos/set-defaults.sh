@@ -71,8 +71,8 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screens
 defaults write com.apple.screencapture type -string "png"
 defaults write com.apple.screencapture disable-shadow -bool true
 
-# Enable sub-pixel rendering on non-Apple LCDs.
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
+# Set font smoothing
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # Disable and kill Dashboard
 # Can be reverted with:
@@ -115,12 +115,12 @@ defaults write com.apple.dock tilesize -int 35
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+# Don't auto hide dock
+defaults write com.apple.dock autohide -bool false
 
 # Speeding up Mission Control animations and grouping windows by application
 defaults write com.apple.dock expose-animation-duration -float 0.1
-defaults write com.apple.dock "expose-group-by-app" -bool true
+defaults write com.apple.dock "expose-group-by-app" -bool true; killall Dock
 
 echo "Success! Defaults are set."
 echo "Some changes will not take effect until you reboot your machine."
