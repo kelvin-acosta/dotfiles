@@ -50,6 +50,16 @@ sudo apt-get install -y --no-install-recommends \
   tk-dev \
   unzip
 
+# Install zellij
+ZELLIJ_VERSION="0.40.1"
+pushd /tmp || exit
+  wget --no-verbose -nc "https://github.com/zellij-org/zellij/releases/download/v${ZELLIJ_VERSION}/zellij-x86_64-unknown-linux-musl.tar.gz"
+  tar -xvf zellij*.tar.gz
+  rm zellij*.tar.gz
+  chmod +x zellij
+  sudo mv -f zellij /usr/bin/zellij
+popd || exit
+
 # https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package
 NVIM_VERSION="0.10.1"
 pushd /tmp || exit
