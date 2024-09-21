@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Setting up your Mac..."
+echo "Setting up..."
 
 mkdir -p "$HOME/.config"
 mkdir -p "$HOME/src"
@@ -23,10 +23,12 @@ fi
 source "$HOME/.dotfiles/git/setup.sh"
 
 # Make ZSH the default shell environment
-chsh -s "$(which zsh)"
+sudo chsh -s "$(which zsh)"
 
 # Install Antidote
-git clone --depth=1 https://github.com/mattmc3/antidote.git "$HOME/.antidote"
+if [ ! -d "$HOME/.antidote" ]; then
+  git clone --depth=1 https://github.com/mattmc3/antidote.git "$HOME/.antidote"
+fi
 ln -sfn "$HOME/.dotfiles/zsh/.zsh_plugins.txt" "$HOME/.zsh_plugins.txt"
 
 # Symlink dotfiles

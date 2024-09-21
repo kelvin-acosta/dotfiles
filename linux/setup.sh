@@ -53,29 +53,33 @@ sudo apt-get install -y --no-install-recommends \
 # https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package
 NVIM_VERSION="0.10.1"
 pushd /tmp || exit
-  wget -nc https://github.com/neovim/neovim/releases/download/v${NVIM_VERSION}/nvim.appimage
+  wget --no-verbose -nc https://github.com/neovim/neovim/releases/download/v${NVIM_VERSION}/nvim.appimage
   chmod u+x nvim.appimage
-  sudo mv nvim.appimage /usr/bin/nvim
+  sudo mv -f nvim.appimage /usr/bin/nvim
 popd || exit
 
 mkdir -p "$HOME/.config"
 ln -sfn "$HOME/.dotfiles/nvim" "$HOME/.config/"
 
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
+"$HOME/.fzf/install" --all
+
 # wslutils
-wget -O - https://pkg.wslutiliti.es/public.key | sudo gpg -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor
+wget --no-verbose -O - https://pkg.wslutiliti.es/public.key | sudo gpg --yes -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor
 echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.pgp] https://pkg.wslutiliti.es/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") main" | sudo tee /etc/apt/sources.list.d/wslu.list
 sudo apt update
 sudo apt install wslu -y --no-install-recommends
 
 # mise https://mise.jdx.dev/getting-started.html#_1-install-mise-cli
-curl https://mise.run | sh
+curl -sSfL https://mise.run | sh
 
 # rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSfL https://sh.rustup.rs | sh -s -- -y
 
 # mojo
-curl -s https://get.modular.com | sh -
+curl -sSfL https://get.modular.com | sh -
 
 # ruff
-curl -LsSf https://astral.sh/ruff/install.sh | sh
+curl -sSfL https://astral.sh/ruff/install.sh | sh
