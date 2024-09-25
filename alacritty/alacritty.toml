@@ -8,10 +8,10 @@ args = ["-l", "-c", "zellij"]
 [window]
 padding.x = 16
 padding.y = 14
-decorations = "None"
+decorations = "buttonless"
 opacity = 0.98
 option_as_alt = "Both"
-dimensions.columns = 121
+dimensions.columns = 120
 dimensions.lines = 40
 
 [keyboard]
