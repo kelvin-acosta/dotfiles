@@ -62,6 +62,8 @@ defaults -currentHost write com.apple.trackpad.enableSecondaryClick -bool true
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
 ###############################################################################
 # Screen
 ###############################################################################
