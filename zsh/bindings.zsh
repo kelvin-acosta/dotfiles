@@ -8,9 +8,14 @@ bindkey '^[OA' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[OB' history-substring-search-down
 
+#
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 ### ctrl+arrows
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
+
 # urxvt
 bindkey "\eOc" forward-word
 bindkey "\eOd" backward-word
