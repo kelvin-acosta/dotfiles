@@ -19,6 +19,8 @@ fi
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#414868'
+
 # Source anything in .zshrc.d.
 for _rc in ${ZDOTDIR:-$HOME}/.zshrc.d/*.zsh; do
   # Ignore tilde files.
