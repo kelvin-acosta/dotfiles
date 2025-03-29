@@ -128,12 +128,25 @@ alias ghpr='gh pr create'
 alias zshTime='for i in $(seq 1 10); do time zsh -i -c exit; done'
 
 # ---------------------------
+# AWS
+# ---------------------------
+awspe() {
+  local credentials
+  credentials=$(aws configure export-credentials --profile "$AWS_PROFILE" --format env)
+  source <(echo $credentials)
+}
+
+alias awsc='env | grep -i AWS'
+alias awsp='export AWS_PROFILE=$(awk '\''/^\[profile/ { sub(/\]$/, "", $2); print $2 }'\'' "${HOME}/.aws/config" | fzf --prompt="Select profile: " --height=50% --reverse) && printf "Set to profile \033[1;33m$AWS_PROFILE\n"'
+
+# ---------------------------
 # OTHER
 # ---------------------------
 alias k='kubectl'
 alias antipurge='rm -rf `antidote home` && rm $HOME/.zsh_plugins.zsh'
 alias assh="aws ssm start-session --target"
 alias vim="nvim"
+alias k9s="TERM=xterm-256color k9s"
 
 if [[ $OSTYPE = darwin* ]]; then
   alias mycoach="BUNDLE_GEMFILE=$HOME/src/coach/coach_cli/Gemfile bundle exec $HOME/src/coach/coach_cli/exe/coach"
