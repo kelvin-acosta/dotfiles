@@ -1,21 +1,46 @@
 # This is Git's per-user configuration file.
 [user]
   name = Kelvin Acosta
-  email = kelvinacostac@gmail.com
-[core]
-  excludesfile = ~/.gitignore_global
-  pager = diff-so-fancy | less --tabs=4 -RFX
-[push]
-  default = simple
-[pull]
-  rebase = false
-[diff]
-  indentHeuristic = on
+  email = 16613817+kelvin-acosta@users.noreply.github.com
 [github]
   user = kelvin-acosta
+[column]
+	ui = auto
+[core]
+  excludesfile = ~/.gitignore_global
+  pager = diff-so-fancy | less --tabs=4 -RF
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[help]
+  autocorrect = prompt
+[init]
+  defaultBranch = main
+[branch]
+	sort = -committerdate
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[pull]
+  rebase = true
+[fetch]
+  all = true
+  prune = true
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[merge]
+  conflictstyle = zdiff3
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[tag]
+  sort = version:refname
 [format]
   pretty = %C(auto)%h - %s%d%n%+b%+N(%G?) %an <%ae> (%C(blue)%ad%C(auto))%n
-# Colors
 [color]
   ui = true
 [color "diff-highlight"]
@@ -24,14 +49,13 @@
   newNormal = green bold
   newHightlight = green bold 22
 [color "diff"]
-  meta = yellow
+  meta = 11
   frag = magenta bold
+  func = 146 bold
   commit = yellow bold
   old = red bold
   new = green bold
   whitespace = red reverse
-[init]
-  defaultBranch = main
 [credential "https://github.com"]
   helper = !gh auth git-credential
 [credential "https://gist.github.com"]
