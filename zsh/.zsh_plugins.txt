@@ -3,6 +3,7 @@
 
 mattmc3/ez-compinit
 zsh-users/zsh-completions kind:fpath path:src
+aloxaf/fzf-tab
 
 belak/zsh-utils path:completion/functions kind:autoload post:compstyle_zshzoo_setup
 
