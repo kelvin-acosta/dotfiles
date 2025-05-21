@@ -5,18 +5,19 @@
 [github]
   user = kelvin-acosta
 [column]
-	ui = auto
+  ui = auto
 [core]
   excludesfile = ~/.gitignore_global
   pager = diff-so-fancy | less --tabs=4 -RF
 [interactive]
-	diffFilter = diff-so-fancy --patch
+  diffFilter = diff-so-fancy --patch
 [help]
   autocorrect = prompt
 [init]
   defaultBranch = main
+  templatedir = /Users/kelvinacosta/.git-templates
 [branch]
-	sort = -committerdate
+  sort = -committerdate
 [push]
   default = simple
   autoSetupRemote = true
@@ -37,6 +38,9 @@
   autoSquash = true
   autoStash = true
   updateRefs = true
+[rerere]
+  enabled = true
+  autoupdate = true
 [tag]
   sort = version:refname
 [format]

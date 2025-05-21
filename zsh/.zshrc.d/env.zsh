@@ -10,7 +10,7 @@ fi
 
 # LS COLOR
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # Path
 export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH

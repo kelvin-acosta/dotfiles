@@ -115,6 +115,7 @@ alias gds='git diff --staged'
 alias gfa='git fetch --all --tags --prune --jobs=10'
 alias gl='git pull'
 alias gp='git push'
+alias gpf='git push --force-with-lease'
 alias gpristine='git reset --hard && git clean --force -dfx'
 alias grb='git rebase'
 alias grba='git rebase --abort'
@@ -136,8 +137,35 @@ awspe() {
   source <(echo $credentials)
 }
 
+assume_role() {
+  if [ -z "$1" ]; then
+    echo "Usage: assume_role <role-arn> [session-name]"
+    return 1
+  fi
+
+  ROLE_ARN="$1"
+  SESSION_NAME="${2:-kelvin}"
+
+  CREDS=$(aws sts assume-role \
+    --role-arn "$ROLE_ARN" \
+    --role-session-name "$SESSION_NAME" \
+    --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]' \
+    --output text)
+
+  if [ $? -ne 0 ]; then
+    echo "Failed to assume role"
+    return 1
+  fi
+
+  export AWS_ACCESS_KEY_ID=$(echo "$CREDS" | awk '{print $1}')
+  export AWS_SECRET_ACCESS_KEY=$(echo "$CREDS" | awk '{print $2}')
+  export AWS_SESSION_TOKEN=$(echo "$CREDS" | awk '{print $3}')
+
+  echo "Assumed role: $ROLE_ARN"
+}
+
 alias awsc='env | grep -i AWS'
-alias awsp='export AWS_PROFILE=$(awk '\''/^\[profile/ { sub(/\]$/, "", $2); print $2 }'\'' "${HOME}/.aws/config" | fzf --prompt="Select profile: " --height=50% --reverse) && printf "Set to profile \033[1;33m$AWS_PROFILE\n"'
+alias awsp='export AWS_PROFILE=$(awk '\''/^\[profile/ { sub(/\]$/, "", $2); print $2 }'\'' "${HOME}/.aws/config" | fzf --prompt="Select profile: " --height=50% --reverse) && printf "Set profile to \033[1;33m$AWS_PROFILE\n"'
 
 # ---------------------------
 # OTHER

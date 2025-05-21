@@ -3,7 +3,7 @@ confirm-close-surface = true
 
 theme = GruvboxDarkHard
 font-size = 16
-font-family = JetBrainsMono Nerd Font
+font-family = JetBrains Mono
 cursor-style-blink = true
 cursor-style = block
 
@@ -12,6 +12,7 @@ link-url = true
 window-decoration = true
 window-padding-x = 4
 window-padding-y = 2
+window-inherit-font-size = true
 
 macos-titlebar-style = transparent
 macos-titlebar-proxy-icon = hidden
