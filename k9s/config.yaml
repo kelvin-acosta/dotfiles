@@ -9,15 +9,9 @@ k9s:
     logoless: false
     crumbsless: false
     noIcons: false
-    skin: gruvbox-dark
+    skin: kanagawa
   skipLatestRevCheck: false
   disablePodCounting: false
-  shellPod:
-    image: busybox:1.36.1
-    namespace: default
-    limits:
-      cpu: 100m
-      memory: 100Mi
   logger:
     tail: 100
     buffer: 5000

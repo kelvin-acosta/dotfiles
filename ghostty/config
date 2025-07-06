@@ -1,24 +1,17 @@
-shell-integration-features = no-cursor
-confirm-close-surface = true
-
-theme = GruvboxDarkHard
+theme = Kanagawa Wave
 font-size = 16
 font-family = JetBrains Mono
-cursor-style-blink = true
+
+clipboard-read = "allow"
+clipboard-paste-protection = false
+copy-on-select = clipboard
 cursor-style = block
+cursor-style-blink = true
 
 link-url = true
 
-window-decoration = true
-window-padding-x = 4
-window-padding-y = 2
-window-inherit-font-size = true
-
-macos-titlebar-style = transparent
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = left
 mouse-hide-while-typing = true
 
-clipboard-read = "allow"
-copy-on-select = clipboard
-clipboard-paste-protection = false
+shell-integration-features = no-cursor

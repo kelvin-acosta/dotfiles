@@ -32,6 +32,8 @@ for _rc in ${ZDOTDIR:-$HOME}/.zshrc.d/*.zsh; do
 done
 unset _rc
 
+source "$HOME/.bootstrap/env.sh"
+
 # # fzf
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
 

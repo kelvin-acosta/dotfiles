@@ -41,7 +41,7 @@ defaults write com.apple.screencapture type -string "png"
 defaults write com.apple.screencapture disable-shadow -bool true
 
 # Set font smoothing
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
+defaults -currentHost write -g AppleFontSmoothing -int 0
 
 # Disable and kill Dashboard
 # Can be reverted with:
