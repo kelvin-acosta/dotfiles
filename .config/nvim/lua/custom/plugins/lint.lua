@@ -7,6 +7,9 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         terraform = { 'tflint' },
+        markdown = { 'markdownlint' },
+        dockerfile = { 'hadolint' },
+        ruby = { 'rubocop' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

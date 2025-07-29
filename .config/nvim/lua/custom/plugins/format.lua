@@ -15,6 +15,11 @@ return {
     },
     opts = {
       notify_on_error = false,
+      formatters = {
+        shfmt = {
+          prepend_args = { '-i', '2' },
+        },
+      },
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -31,6 +36,10 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        go = { 'goimports' },
+        sh = { 'shfmt' },
+        bash = { 'shfmt' },
+        terraform = { 'terraform_fmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

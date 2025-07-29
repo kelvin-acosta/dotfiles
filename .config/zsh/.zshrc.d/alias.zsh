@@ -185,7 +185,6 @@ alias k='kubectl'
 alias antipurge='rm -rf `antidote home` && rm $HOME/.zsh_plugins.zsh'
 alias assh="aws ssm start-session --target"
 alias vim="nvim"
-alias k9s="TERM=xterm-256color k9s"
 
 if [[ $OSTYPE = darwin* ]]; then
   alias mycoach="BUNDLE_GEMFILE=$HOME/src/coach/coach_cli/Gemfile bundle exec $HOME/src/coach/coach_cli/exe/coach"
