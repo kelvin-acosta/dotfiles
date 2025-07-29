@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Set base directory
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-BASE_DIR="$( dirname "$DIR" )"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_DIR="$(dirname "$DIR")"
 
 # Check for Homebrew and install if we don't have it
 if test ! "$(which brew)"; then
@@ -15,11 +15,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
 brew bundle --file="$BASE_DIR/brew/Brewfile"
-
-# Create .fzf if it doesn't exist
-[[ -f ~/.fzf.zsh ]] || fzf --zsh > ~/.fzf.zsh
 
 mkdir -p ~/.docker/cli-plugins
 ln -sfn "${HOMEBREW_PREFIX}/opt/docker-buildx/bin/docker-buildx" "${HOME}/.docker/cli-plugins/docker-buildx"
