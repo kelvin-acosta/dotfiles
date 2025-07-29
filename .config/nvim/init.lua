@@ -13,63 +13,67 @@ vim.g.have_nerd_font = true
 --  For more options, you can see `:help option-list`
 
 -- Make line numbers default
-vim.opt.number = true
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.nu = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.o.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+vim.o.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+  vim.o.clipboard = 'unnamedplus'
 end)
 
 -- Enable break indent
-vim.opt.breakindent = true
+vim.o.breakindent = true
 
 -- Save undo history
-vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
-vim.opt.undofile = true
+vim.o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.o.signcolumn = 'yes'
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.o.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+vim.o.timeoutlen = 300
 
 -- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
+vim.o.list = true
 vim.opt.listchars = { tab = '▎ ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.o.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.o.scrolloff = 10
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.o.confirm = true
 
 vim.opt.incsearch = true
 vim.opt.guicursor = ''
@@ -177,11 +181,14 @@ require('lazy').setup({
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
+      -- delay between pressing a key and opening which-key (milliseconds)
+      -- this setting is independent of vim.o.timeoutlen
+      delay = 0,
       icons = {
         -- set icon mappings to true if you have a Nerd Font
         mappings = vim.g.have_nerd_font,
         -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
-        -- default whick-key.nvim defined Nerd Font icons, otherwise define a string table
+        -- default which-key.nvim defined Nerd Font icons, otherwise define a string table
         keys = vim.g.have_nerd_font and {} or {
           Up = '<Up> ',
           Down = '<Down> ',
@@ -216,18 +223,12 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
-  },
-
-  -- Highlight todo, notes, etc in comments
+  }, -- Highlight todo, notes, etc in comments
   { import = 'custom.plugins' },
 }, {
   ui = {
