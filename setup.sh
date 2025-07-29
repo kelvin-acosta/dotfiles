@@ -24,7 +24,7 @@ else
 fi
 
 # Make ZSH the default shell environment
-sudo chsh -s "$(which zsh)"
+chsh -s "$(which zsh)"
 
 if type fzf &>/dev/null; then
   fzf --zsh >"$HOME/.fzf.zsh"
