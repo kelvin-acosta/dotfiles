@@ -12,11 +12,6 @@ if [[ ! -d ${ZDOTDIR:-$HOME}/.antidote ]]; then
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-$HOME}/.antidote
 fi
 
-# mise
-if type mise &> /dev/null; then
-  eval "$(mise activate zsh)"
-fi
-
 # # Antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
@@ -32,7 +27,14 @@ for _rc in ${ZDOTDIR:-$HOME}/.zshrc.d/*.zsh; do
 done
 unset _rc
 
-source "$HOME/.bootstrap/env.sh"
+# mise
+if type mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
+
+[[ ! -f ~/.bootstrap/env.sh ]] || source "$HOME/.bootstrap/env.sh"
+
+[[ ! -f ~/.local/share/omarchy/default/bash/functions ]] || source "$HOME/.local/share/omarchy/default/bash/functions"
 
 # # fzf
 [[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
