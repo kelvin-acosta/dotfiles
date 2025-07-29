@@ -15,7 +15,6 @@
   autocorrect = prompt
 [init]
   defaultBranch = main
-  templatedir = /Users/kelvinacosta/.git-templates
 [branch]
   sort = -committerdate
 [push]
@@ -61,6 +60,8 @@
   new = green bold
   whitespace = red reverse
 [credential "https://github.com"]
-  helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !gh auth git-credential
 [credential "https://gist.github.com"]
-  helper = !/opt/homebrew/bin/gh auth git-credential
+  helper = 
+  helper = !gh auth git-credential
