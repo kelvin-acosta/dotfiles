@@ -20,6 +20,16 @@ alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
+alias cd="zd"
+zd() {
+  if [ $# -eq 0 ]; then
+    builtin cd ~ && return
+  elif [ -d "$1" ]; then
+    builtin cd "$1"
+  else
+    z "$@" && printf " \U000F17A9 " && pwd || echo "Error: Directory not found"
+  fi
+}
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
@@ -66,7 +76,8 @@ extract () {
 # ---------------------------
 
 alias qfind="find . -name "                 # qfind:    Quickly search for file
-ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
+# ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 
 # memHogsTop, memHogsPs:  Find memory hogs
 # -----------------------------------------------------
@@ -174,7 +185,6 @@ alias k='kubectl'
 alias antipurge='rm -rf `antidote home` && rm $HOME/.zsh_plugins.zsh'
 alias assh="aws ssm start-session --target"
 alias vim="nvim"
-alias k9s="TERM=xterm-256color k9s"
 
 if [[ $OSTYPE = darwin* ]]; then
   alias mycoach="BUNDLE_GEMFILE=$HOME/src/coach/coach_cli/Gemfile bundle exec $HOME/src/coach/coach_cli/exe/coach"

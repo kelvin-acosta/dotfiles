@@ -12,8 +12,7 @@ fi
 export CLICOLOR=1
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-# Path
-export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# Krew
 export PATH="$HOME/.krew/bin:$PATH"
 
 ## Rust
@@ -32,7 +31,7 @@ local color_bg='#1F1F28'
 local color_bg_plus='#363646'
 local color_fg='#DCD7BA'
 local color_fg_plus='#C8C093'
-local color_highlight='#2d4f67'
+local color_highlight='#938AB9'
 local color_info='#E6C384'
 local color_prompt='#C0A36E'
 local color_pointer='#98BB6C'

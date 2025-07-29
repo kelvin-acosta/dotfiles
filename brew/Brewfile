@@ -2,6 +2,8 @@
 brew 'coreutils'
 
 # Install Tools
+brew 'stow'
+brew 'eza'
 brew 'grep'
 brew 'awscli'
 brew 'diff-so-fancy'
