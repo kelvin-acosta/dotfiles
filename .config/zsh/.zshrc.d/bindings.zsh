@@ -21,3 +21,6 @@ bindkey '^[[3~' delete-char
 # Some emacs keybindings won't hurt nobody
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+
+bindkey "^[[1;5C" forward-word  # ctrl + ->
+bindkey "^[[1;5D" backward-word # ctrl + <-
