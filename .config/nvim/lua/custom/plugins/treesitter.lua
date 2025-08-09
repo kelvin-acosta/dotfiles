@@ -10,6 +10,7 @@ return { -- Highlight, edit, and navigate code
         'c',
         'diff',
         'go',
+        'helm',
         'html',
         'julia',
         'lua',
@@ -44,5 +45,10 @@ return { -- Highlight, edit, and navigate code
   {
     'RRethy/nvim-treesitter-endwise',
     lazy = false,
+  },
+  {
+    "qvalentin/helm-ls.nvim",
+    ft = "helm",
+    opts = {},
   },
 }

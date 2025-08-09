@@ -59,7 +59,7 @@ vim.o.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.o.list = true
-vim.opt.listchars = { tab = '▎ ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '▏ ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -178,6 +178,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   { -- Useful plugin to show you pending keybinds.
+    cond = (function() return not vim.g.vscode end),
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -229,7 +230,17 @@ require('lazy').setup({
       },
     },
   }, -- Highlight todo, notes, etc in comments
-  { import = 'custom.plugins' },
+  { import = 'custom.plugins.cloak', cond = true },
+  { import = 'custom.plugins.init', cond = true },
+  { import = 'custom.plugins.mini', cond = true },
+  { import = 'custom.plugins.treesitter', cond = true },
+  { import = 'custom.plugins.coding', cond = (function() return not vim.g.vscode end) },
+  { import = 'custom.plugins.colors', cond = (function() return not vim.g.vscode end) },
+  { import = 'custom.plugins.editor', cond = (function() return not vim.g.vscode end) },
+  { import = 'custom.plugins.format', cond = (function() return not vim.g.vscode end) },
+  { import = 'custom.plugins.lint', cond = (function() return not vim.g.vscode end) },
+  { import = 'custom.plugins.telescope', cond = (function() return not vim.g.vscode end) },
+  { import = 'custom.plugins.ui', cond = (function() return not vim.g.vscode end) },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

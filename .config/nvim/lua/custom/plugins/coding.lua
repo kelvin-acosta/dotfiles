@@ -220,6 +220,10 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        ruby_lsp = {
+          mason = false,
+          cmd = { vim.fn.expand '~/.local/share/mise/shims/ruby-lsp' },
+        },
 
         lua_ls = {
           -- cmd = { ... },
@@ -257,8 +261,10 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-        automatic_installation = false,
+        ensure_installed = {
+          'lua_ls', -- Lua Language Server
+        }, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        automatic_installation = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -384,5 +390,8 @@ return {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     opts = {},
+  },
+  {
+    'github/copilot.vim',
   },
 }
