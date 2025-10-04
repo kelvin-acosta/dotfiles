@@ -391,7 +391,4 @@ return {
     event = 'InsertEnter',
     opts = {},
   },
-  {
-    'github/copilot.vim',
-  },
 }

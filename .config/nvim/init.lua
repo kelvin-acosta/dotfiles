@@ -230,10 +230,10 @@ require('lazy').setup({
       },
     },
   }, -- Highlight todo, notes, etc in comments
-  { import = 'custom.plugins.cloak', cond = true },
+  { import = 'custom.plugins.cloak', cond = (function() return not vim.g.vscode end) },
   { import = 'custom.plugins.init', cond = true },
   { import = 'custom.plugins.mini', cond = true },
-  { import = 'custom.plugins.treesitter', cond = true },
+  { import = 'custom.plugins.treesitter', cond = (function() return not vim.g.vscode end) },
   { import = 'custom.plugins.coding', cond = (function() return not vim.g.vscode end) },
   { import = 'custom.plugins.colors', cond = (function() return not vim.g.vscode end) },
   { import = 'custom.plugins.editor', cond = (function() return not vim.g.vscode end) },

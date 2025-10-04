@@ -1,5 +1,5 @@
 theme = kanagawabones
-font-size = 16
+font-size = 18
 font-family = JetBrains Mono
 
 clipboard-read = "allow"
@@ -11,8 +11,18 @@ cursor-style-blink = true
 link-url = true
 
 macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
 macos-option-as-alt = left
 
 mouse-hide-while-typing = true
 
 shell-integration-features = no-cursor
+
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = global:cmd+alt+backquote=toggle_quick_terminal
+
+quick-terminal-position = center
+quick-terminal-size = 35%,60%

@@ -102,8 +102,11 @@ return {
       end,
     },
   },
-
   -- Finds and lists all of the TODO, HACK, BUG, etc comment
   -- in your project and loads them into a browsable list.
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  {
+    'gbprod/cutlass.nvim',
+    opts = {},
+  },
 }

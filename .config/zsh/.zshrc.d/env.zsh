@@ -12,6 +12,8 @@ fi
 export CLICOLOR=1
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Krew
 export PATH="$HOME/.krew/bin:$PATH"
 
