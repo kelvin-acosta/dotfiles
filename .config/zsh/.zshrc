@@ -13,7 +13,7 @@ if [[ ! -d ${ZDOTDIR:-$HOME}/.antidote ]]; then
 fi
 
 # # Antidote
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
 antidote load
 
 ZSH_HIGHLIGHT_STYLES[comment]='fg=#414868'
@@ -32,12 +32,12 @@ if type mise &> /dev/null; then
   eval "$(mise activate zsh)"
 fi
 
-[[ ! -f ~/.bootstrap/env.sh ]] || source "$HOME/.bootstrap/env.sh"
+[[ ! -f $HOME/.bootstrap/env.sh ]] || source "$HOME/.bootstrap/env.sh"
 
-[[ ! -f ~/.local/share/omarchy/default/bash/functions ]] || source "$HOME/.local/share/omarchy/default/bash/functions"
+[[ ! -f $HOME/.local/share/omarchy/default/bash/functions ]] || source "$HOME/.local/share/omarchy/default/bash/functions"
 
 # fzf
-[[ ! -f ~/.fzf.zsh ]] || source ~/.fzf.zsh
+[[ ! -f $HOME/.fzf.zsh ]] || source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh

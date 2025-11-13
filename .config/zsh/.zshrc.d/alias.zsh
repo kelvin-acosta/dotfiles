@@ -13,6 +13,7 @@ alias sshconfig="vim ~/.ssh/config"
 # MAKE TERMINAL BETTER
 # -----------------------------
 
+alias lg='lazygit'
 alias src='cd ~/src'
 alias be='bundle exec'
 alias cp='cp -iv'                           # Preferred 'cp' implementation
