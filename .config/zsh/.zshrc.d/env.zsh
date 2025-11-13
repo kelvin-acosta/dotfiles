@@ -5,12 +5,13 @@ export GIT_EDITOR="$EDITOR"
 
 # MacOS
 if [[ $OSTYPE = darwin* ]]; then
-  export DOCKER_HOST="unix://$HOME/.config/colima/docker.sock"
+  # podman machine set --rootful
+  # podman machine inspect | yq ".[0].ConnectionInfo.PodmanSocket.Path"
+  export DOCKER_HOST='unix:///var/folders/87/rmn0qkj92hz499h0n4pwx9tm0000gp/T/podman/podman-machine-default-api.sock'
 fi
 
-# LS COLOR
-export CLICOLOR=1
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
+export KUBECTX_CURRENT_FGCOLOR=$(printf "\e[38;2;167;192;128m")
+export KUBECTX_CURRENT_BGCOLOR=$(printf "\033[38;2;45;53;59m")
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -21,40 +22,14 @@ export PATH="$HOME/.krew/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
   --info=inline-right \
-  --ansi \
   --layout=reverse \
-  --border=none \
 "
 
-# Kanagawa Colors for FZF
-local color_bg='#1F1F28'
-local color_bg_plus='#363646'
-local color_fg='#DCD7BA'
-local color_fg_plus='#C8C093'
-local color_highlight='#938AB9'
-local color_info='#E6C384'
-local color_prompt='#C0A36E'
-local color_pointer='#98BB6C'
-local color_marker='#6A9589'
-local color_spinner='#938AA9'
-
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
-" --color=bg+:$color_bg_plus,bg:$color_bg,spinner:$color_spinner,hl:$color_highlight"\
-" --color=fg:$color_fg,header:$color_highlight,info:$color_info,pointer:$color_pointer"\
-" --color=marker:$color_marker,fg+:$color_fg_plus,prompt:$color_prompt,hl+:$color_highlight"
-
-# Gruvbox colors
-# local color00='#1d2021'
-# local color01='#3c3836'
-# local color04='#bdae93'
-# local color06='#ebdbb2'
-# local color0A='#fabd2f'
-# local color0C='#8ec07c'
-# local color0D='#83a598'
-
-# export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
-# " --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D"\
-# " --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C"\
-# " --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:-1,fg+:#9da9a9,bg:-1,bg+:#272e33
+  --color=hl:#7fbbb3,hl+:#83c092,info:#a7c080,marker:#a7c080
+  --color=prompt:#e67e80,spinner:#d699b6,pointer:#d699b6,header:#87afaf
+  --color=selected-bg:#4c3743
+  --border="rounded" --preview-window="border-rounded"
+  --pointer="◆"'

@@ -9,7 +9,7 @@ k9s:
     logoless: false
     crumbsless: false
     noIcons: false
-    skin: kanagawa
+    skin: everforest-dark
   skipLatestRevCheck: false
   disablePodCounting: false
   logger:

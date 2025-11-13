@@ -12,7 +12,6 @@ return { -- Highlight, edit, and navigate code
         'go',
         'helm',
         'html',
-        'julia',
         'lua',
         'luadoc',
         'markdown',
