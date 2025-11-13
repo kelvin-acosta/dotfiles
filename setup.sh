@@ -19,6 +19,8 @@ if [[ $OSTYPE = darwin* ]]; then
   # Install Brew & Bundle Brewfile
   source "$HOME/.dotfiles/macos/set-defaults.sh"
   source "$HOME/.dotfiles/brew/setup.sh"
+  cp -f "$HOME/.dotfiles/macos/sleepwatcher-localuser.plist" "$HOME/Library/LaunchAgents/sleepwatcher-localuser.plist"
+  launchctl load "$HOME/Library/LaunchAgents/sleepwatcher-localuser.plist"
 else
   source "$HOME/.dotfiles/omarchy/setup.sh"
 fi
